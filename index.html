@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym</title>
+    <title>Inicio | Gym</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar">
-        <div class="navbar-logo" onclick="window.location.href='bienvenida.html'" style="cursor: pointer;">Gym</div>
+        <div class="navbar-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">Gym</div>
         <ul class="navbar-links">
             <li><a href="pages/login.html">Ingresar</a></li>
             <li><a href="pages/servicios.html">Servicios</a></li>
             <li><a href="pages/planes.html">Planes</a></li>
             <li><a href="pages/contacto.html">Contacto</a></li>
+            <p style="color: rgb(94, 93, 93);" id="usuario-logueado"></p>
+
         </ul>
     </nav>
 
-    <main>
-        <h1 style="text-align:center; margin-top:100px;">¡Bienvenido a nuestro gimnasio!</h1>
-    </main>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Transformá tu cuerpo, superá tus límites 💪</h1>
+            <p>Entrená con los mejores y alcanzá tu mejor versión. ¡Hoy es el día para empezar!</p>
+            <a href="pages/planes.html" class="btn-cta">Ver Planes</a>
+        </div>
+    </header>
+
+    <script>
+        const usuario = localStorage.getItem("usuario");
+        const texto = document.getElementById("usuario-logueado");
+        if (usuario) {
+            texto.textContent = `Bienvenido, ${usuario}`;
+        }
+    </script>
 </body>
+
 </html>
