@@ -1,35 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <title>Login</title>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-logo">Gym</div>
-        <ul class="navbar-links">
-            <li><a href="./pages/login.html">Ingresar</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Planes</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <form class="login-form">
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required>
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">Gym</div>
+    <ul class="navbar-links">
+      <li><a href="login.html" class="active">Ingresar</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="planes.html">Planes</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="login-form" class="login-form">
+      <label for="username">Usuario</label>
+      <input type="text" id="username" name="username" required>
 
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="error-msg">Usuario o contraseña incorrectos</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('login-form');
+    const errorMsg = document.getElementById('error-msg');
+    errorMsg.style.display = "none";
+
+    const usuarios = {
+      "GONZALO": "hola123",
+      "MARIANO": "hola456",
+      "GUADA": "hola789",
+      "FRANCISCO": "hola234"
+    };
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim().toUpperCase();
+      const password = document.getElementById('password').value.trim();
+
+      if (usuarios[username] && usuarios[username] === password) {
+        localStorage.setItem("usuario", username);
+
+        Swal.fire({
+          title: `¡Bienvenido ${username}! 💪`,
+          text: "Nos alegra verte de nuevo en el gimnasio.",
+          icon: "success",
+          confirmButtonText: "Entrar",
+          confirmButtonColor: "#f39c12"
+        }).then(() => {
+          window.location.href = "../index.html";
+        });
+
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 </body>
 
 </html>
