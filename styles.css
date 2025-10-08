@@ -299,3 +299,104 @@ body {
 .contacto-form button:hover {
   background-color: #d35400;
 }
+
+/* === FOOTER === */
+.footer {
+  background-color: #222;
+  color: #f9f9f9;
+  padding: 40px 20px 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-logo h3 {
+  color: #f39c12;
+  font-size: 1.5rem;
+}
+
+.footer-logo p {
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials a {
+  color: #f39c12;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+footer {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main, section {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+footer {
+    display: block;
+    margin: 0;
+    padding: 0px 0 0px 0; /* podés ajustar si querés más aire adentro */
+    background-color: #111; /* mismo color que el resto */
+}
+
+body {
+    background-color: #222; /* mismo color que el footer */
+}
