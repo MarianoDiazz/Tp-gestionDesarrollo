@@ -1,73 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - FitGym</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
-        <a href="../index.html" style="text-decoration: none;" class="navbar-logo">Gym</a>
-        <ul class="navbar-links">
-            <li><a href="pages/entrenadores.html">Entrenadores</a></li>
-
-            <li><a href="./login.html">Ingresar</a></li>
-            <li><a href="./servicios.html">Servicios</a></li>
-            <li><a href="./planes.html">Planes</a></li>
-            <li><a href="./contacto.html" class="active">Contacto</a></li>
-        </ul>
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+                    <span class="logo-icon">💪</span>
+                    <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+                </div>
+                <ul class="navbar-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="./planes.html">Planes</a></li>
+                    <li><a href="./contacto.html" class="active">Contacto</a></li>
+                    <li><a href="./login.html" class="btn-nav">Ingresar</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-
-    <div class="contacto-container">
-        <h2>Contáctanos</h2>
-        <form class="contacto-form">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <h3>Gym</h3>
-                <p>Un lugar para superar tus límites 💪</p>
+    <!-- ===== HERO CONTACTO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-badge">Estamos para ayudarte</span>
+                <h1>Contactanos</h1>
+                <p>¿Tenés alguna duda? Completá el formulario y te responderemos a la brevedad</p>
             </div>
-
-            <div class="footer-links">
-                <a href="pages/servicios.html">Servicios</a>
-                <a href="pages/planes.html">Planes</a>
-                <a href="pages/contacto.html">Contacto</a>
-                <a href="pages/login.html">Ingresar</a>
-            </div>
-
-            <div class="footer-socials">
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter / X">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-            </div>
-
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Gym. Todos los derechos reservados.</p>
+    </section>
+
+    <!-- ===== CONTENIDO CONTACTO ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Info de contacto -->
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+                    <p class="contact-intro">También podés comunicarte con nosotros por estos medios</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Siempre Fuerte 1234<br>Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>(011) 1234-5678</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@fitgym.com<br>consultas@fitgym.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h3>Horarios de Atención</h3>
+                            <p>Lunes a Viernes: 7:00 - 22:00<br>
+                                Sábados: 8:00 - 20:00<br>
+                                Domingos: Cerrado</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h3>Seguinos en redes</h3>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn">📷 Instagram</a>
+                            <a href="#" class="social-btn">📘 Facebook</a>
+                            <a href="#" class="social-btn">🎵 TikTok</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-form-container">
+                    <h2>Envianos un Mensaje</h2>
+                    <p class="form-intro">Completá el formulario y te responderemos en menos de 24 horas</p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(011) 1234-5678">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Seleccioná un asunto</option>
+                                <option value="info">Información general</option>
+                                <option value="planes">Consulta sobre planes</option>
+                                <option value="clases">Horarios de clases</option>
+                                <option value="entrenador">Personal trainer</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" rows="6"
+                                placeholder="Contanos en qué podemos ayudarte..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Enviar Mensaje</button>
+                        <p class="form-note">* Campos obligatorios</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAPA ===== -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Visitanos</h2>
+            <p class="section-description">Vení a conocer nuestras instalaciones</p>
+            <div class="map-container-full">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168881437284!2d-58.38156908477049!3d-34.603722480459445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf8c8b7e0d%3A0x4e3d1c4c8e8f0e0!2sObelisco!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                    width="100%" height="450" style="border:0;border-radius:var(--radius-lg);" allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon">💪</span>
+                        <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+                    </div>
+                    <p>Transformá tu cuerpo, transformá tu vida. Tu mejor versión te espera.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="./servicios.html">Servicios</a></li>
+                        <li><a href="./planes.html">Planes</a></li>
+                        <li><a href="./entrenadores.html">Entrenadores</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Horarios</h4>
+                    <ul>
+                        <li>Lun - Vie: 7:00 - 22:00</li>
+                        <li>Sábados: 8:00 - 20:00</li>
+                        <li>Domingos: Cerrado</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Av. Siempre Fuerte 1234</li>
+                        <li>📞 (011) 1234-5678</li>
+                        <li>✉️ info@fitgym.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Manejo del formulario
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
