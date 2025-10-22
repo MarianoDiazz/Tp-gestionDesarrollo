@@ -4,41 +4,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - FitGym</title>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="../styles.css">
-  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-    <a href="../index.html" style="text-decoration: none;" class="navbar-logo">Gym</a>
-    <ul class="navbar-links">
-      <li><a href="./login.html">Ingresar</a></li>
-      <li><a href="./servicios.html">Servicios</a></li>
-      <li><a href="pages/entrenadores.html">Entrenadores</a></li>
-      <li><a href="./planes.html">Planes</a></li>
-      <li><a href="./contacto.html" class="active">Contacto</a></li>
-    </ul>
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+          <span class="logo-icon">💪</span>
+          <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+        </div>
+        <ul class="navbar-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./servicios.html">Servicios</a></li>
+          <li><a href="./planes.html">Planes</a></li>
+          <li><a href="./entrenadores.html">Entrenadores</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./login.html" class="btn-nav active">Ingresar</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <div class="login-container">
-    <h2>Iniciar Sesión</h2>
-    <form id="login-form" class="login-form">
-      <label for="username">Usuario</label>
-      <input type="text" id="username" name="username" required>
+  <!-- ===== LOGIN ===== -->
+  <section class="login-section">
+    <div class="login-container">
+      <div class="login-header">
+        <div class="login-icon">🔐</div>
+        <h2>Iniciar Sesión</h2>
+        <p>Bienvenido de vuelta, ingresá tus credenciales</p>
+      </div>
 
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" name="password" required>
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" placeholder="Ingresá tu usuario" required>
+        </div>
 
-      <button type="submit">Entrar</button>
-    </form>
-    <p id="error-msg">Usuario o contraseña incorrectos</p>
-  </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Ingresá tu contraseña" required>
+        </div>
+
+        <p id="error-msg" style="display: none;"></p>
+
+        <button type="submit" class="btn btn-primary btn-large">Entrar al Gimnasio</button>
+      </form>
+
+      <div class="login-footer">
+        <p>¿No tenés cuenta? <a href="./contacto.html">Contactanos</a></p>
+      </div>
+    </div>
+
+    <!-- <div class="login-info">
+      <div class="info-card">
+        <div class="info-icon">✓</div>
+        <h3>Acceso Total</h3>
+        <p>Gestioná tus planes, reservas y seguimiento desde tu cuenta</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📊</div>
+        <h3>Tu Progreso</h3>
+        <p>Visualizá tus estadísticas y evolución en tiempo real</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎯</div>
+        <h3>Objetivos</h3>
+        <p>Establecé y seguí tus metas de entrenamiento</p>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-icon">💪</span>
+            <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+          </div>
+          <p>Transformá tu cuerpo, transformá tu vida. Tu mejor versión te espera.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="./servicios.html">Servicios</a></li>
+            <li><a href="./planes.html">Planes</a></li>
+            <li><a href="./entrenadores.html">Entrenadores</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <ul>
+            <li>Lun - Vie: 7:00 - 22:00</li>
+            <li>Sábados: 8:00 - 20:00</li>
+            <li>Domingos: Cerrado</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>📍 Av. Siempre Fuerte 1234</li>
+            <li>📞 (011) 1234-5678</li>
+            <li>✉️ info@fitgym.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const form = document.getElementById('login-form');
     const errorMsg = document.getElementById('error-msg');
-    errorMsg.style.display = "none";
 
     const usuarios = {
       "GONZALO": "hola123",
@@ -60,47 +155,24 @@
           text: "Nos alegra verte de nuevo en el gimnasio.",
           icon: "success",
           confirmButtonText: "Entrar",
-          confirmButtonColor: "#f39c12"
+          confirmButtonColor: "#ff6b35",
+          background: "#1e1e1e",
+          color: "#ffffff"
         }).then(() => {
           window.location.href = "../index.html";
         });
 
       } else {
+        errorMsg.textContent = "❌ Usuario o contraseña incorrectos";
         errorMsg.style.display = "block";
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+          errorMsg.style.display = "none";
+        }, 3000);
       }
     });
   </script>
-  <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <h3>Gym</h3>
-                <p>Un lugar para superar tus límites 💪</p>
-            </div>
-
-            <div class="footer-links">
-                <a href="pages/servicios.html">Servicios</a>
-                <a href="pages/planes.html">Planes</a>
-                <a href="pages/contacto.html">Contacto</a>
-                <a href="pages/login.html">Ingresar</a>
-            </div>
-
-            <div class="footer-socials">
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter / X">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-            </div>
-
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Gym. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </body>
 
 </html>
