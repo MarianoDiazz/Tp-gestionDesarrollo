@@ -4,48 +4,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrenadores</title>
+  <title>Entrenadores - FitGym</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-    <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">Gym</div>
-    <ul class="navbar-links">
-      <li><a href="./login.html">Ingresar</a></li>
-      <li><a href="./servicios.html">Servicios</a></li>
-      <li><a href="./planes.html">Planes</a></li>
-      <li><a href="./contacto.html">Contacto</a></li>
-      <li><a href="./entrenadores.html" class="active">Entrenadores</a></li>
-    </ul>
-  </nav>
-
-  <div class="entrenadores-container">
-    <h2>Nuestros Entrenadores</h2>
-    <p class="entrenadores-subtitulo">Conocé a los profesionales que te ayudarán a alcanzar tus metas</p>
-    <div class="entrenadores-grid">
-      <div class="entrenador-card">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Entrenador 1">
-        <h3>Juan Pérez</h3>
-        <p>Especialista en musculación y fuerza</p>
-      </div>
-      <div class="entrenador-card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Entrenadora 2">
-        <h3>Laura Gómez</h3>
-        <p>Coach de Crossfit y nutrición deportiva</p>
-      </div>
-      <div class="entrenador-card">
-        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Entrenador 3">
-        <h3>Carlos Fernández</h3>
-        <p>Instructor de entrenamiento funcional</p>
-      </div>
-      <div class="entrenador-card">
-        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Entrenadora 4">
-        <h3>María López</h3>
-        <p>Profesora de yoga y pilates</p>
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+          <span class="logo-icon">💪</span>
+          <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+        </div>
+        <ul class="navbar-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./servicios.html">Servicios</a></li>
+          <li><a href="./planes.html">Planes</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./login.html" class="btn-nav">Ingresar</a></li>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <!-- ===== HERO ENTRENADORES ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="hero-badge">El equipo que te llevará al siguiente nivel</span>
+        <h1>Nuestros Entrenadores</h1>
+        <p>Profesionales certificados con años de experiencia, listos para ayudarte a alcanzar tus objetivos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENTRENADORES ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="trainers-grid">
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez">
+            <div class="trainer-badge">🏋️ Musculación</div>
+          </div>
+          <div class="trainer-content">
+            <h3>Juan Pérez</h3>
+            <p class="trainer-specialty">Especialista en Musculación y Fuerza</p>
+            <p class="trainer-description">
+              10 años de experiencia en entrenamiento de fuerza. Certificado en powerlifting y biomecánica deportiva.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ NSCA-CPT</span>
+              <span class="credential-item">✓ Nutrición Deportiva</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Laura Gómez">
+            <div class="trainer-badge">⚡ Crossfit</div>
+          </div>
+          <div class="trainer-content">
+            <h3>Laura Gómez</h3>
+            <p class="trainer-specialty">Coach de Crossfit y Nutrición Deportiva</p>
+            <p class="trainer-description">
+              8 años como coach de Crossfit. Especializada en entrenamiento funcional de alta intensidad y planificación
+              nutricional.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ CF-L2 Trainer</span>
+              <span class="credential-item">✓ Nutricionista Deportiva</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Carlos Fernández">
+            <div class="trainer-badge">🎯 Funcional</div>
+          </div>
+          <div class="trainer-content">
+            <h3>Carlos Fernández</h3>
+            <p class="trainer-specialty">Instructor de Entrenamiento Funcional</p>
+            <p class="trainer-description">
+              12 años de trayectoria en fitness. Especialista en rehabilitación deportiva y entrenamiento correctivo.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ FMS Certified</span>
+              <span class="credential-item">✓ Kinesiología</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="María López">
+            <div class="trainer-badge">🧘 Yoga</div>
+          </div>
+          <div class="trainer-content">
+            <h3>María López</h3>
+            <p class="trainer-specialty">Profesora de Yoga y Pilates</p>
+            <p class="trainer-description">
+              15 años de práctica y enseñanza. Certificada en Hatha, Vinyasa Yoga y Pilates Mat. Especialista en
+              mindfulness.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ RYT-500</span>
+              <span class="credential-item">✓ Pilates Instructor</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Diego Martínez">
+            <div class="trainer-badge">💪 Personal Training</div>
+          </div>
+          <div class="trainer-content">
+            <h3>Diego Martínez</h3>
+            <p class="trainer-specialty">Personal Trainer Certificado</p>
+            <p class="trainer-description">
+              9 años ayudando a personas a transformar sus vidas. Especializado en pérdida de peso y ganancia muscular.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ ACE-CPT</span>
+              <span class="credential-item">✓ Behavior Change</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sofía Ramírez">
+            <div class="trainer-badge">🏃 Cardio</div>
+          </div>
+          <div class="trainer-content">
+            <h3>Sofía Ramírez</h3>
+            <p class="trainer-specialty">Instructora de Spinning y Cardio</p>
+            <p class="trainer-description">
+              7 años como instructora de clases grupales. Especialista en entrenamiento cardiovascular y motivación
+              grupal.
+            </p>
+            <div class="trainer-credentials">
+              <span class="credential-item">✓ Spinning Instructor</span>
+              <span class="credential-item">✓ Group Fitness</span>
+            </div>
+            <button class="btn btn-outline btn-trainer" onclick="window.location.href='./contacto.html'">
+              Agendar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARACTERÍSTICAS DEL EQUIPO ===== -->
+  <section class="section team-features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué entrenar con nosotros?</h2>
+        <p class="section-description">Nuestro equipo está comprometido con tu éxito</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon-large">🎓</div>
+          <h3>Profesionales Certificados</h3>
+          <p>Todos nuestros entrenadores cuentan con certificaciones internacionales y actualizaciones constantes.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-large">📊</div>
+          <h3>Seguimiento Personalizado</h3>
+          <p>Evaluaciones periódicas y ajustes continuos en tu plan de entrenamiento.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-large">❤️</div>
+          <h3>Compromiso Real</h3>
+          <p>Nos importa tu progreso. Estamos para motivarte y apoyarte en cada paso.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-large">🏆</div>
+          <h3>Resultados Comprobados</h3>
+          <p>Cientos de clientes han alcanzado sus objetivos con nuestro acompañamiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Listo para empezar?</h2>
+        <p>Reservá tu primera sesión con uno de nuestros entrenadores</p>
+        <button class="btn btn-primary btn-large" onclick="window.location.href='./contacto.html'">
+          Contactar Ahora
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-icon">💪</span>
+            <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+          </div>
+          <p>Transformá tu cuerpo, transformá tu vida. Tu mejor versión te espera.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="./servicios.html">Servicios</a></li>
+            <li><a href="./planes.html">Planes</a></li>
+            <li><a href="./entrenadores.html">Entrenadores</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <ul>
+            <li>Lun - Vie: 7:00 - 22:00</li>
+            <li>Sábados: 8:00 - 20:00</li>
+            <li>Domingos: Cerrado</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>📍 Av. Siempre Fuerte 1234</li>
+            <li>📞 (011) 1234-5678</li>
+            <li>✉️ info@fitgym.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
