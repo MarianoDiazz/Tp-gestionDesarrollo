@@ -1,333 +1,424 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GYM - Tu cambio empieza hoy</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-logo" onclick="window.location.href='index.html'">
-                    <span class="logo-icon">💪</span>
-                    <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
-                </div>
-                <ul class="navbar-links">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="./pages/servicios.html">Servicios</a></li>
-                    <li><a href="./pages/planes.html">Planes</a></li>
-                    <li><a href="./pages/entrenadores.html">Entrenadores</a></li>
-                    <li><a href="./pages/contacto.html">Contacto</a></li>
-                    <li><a href="./pages/login.html" class="btn-nav">Ingresar</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="navbar-content">
+          <div class="navbar-logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon">💪</span>
+            <span class="logo-text"
+              >FIT<span class="logo-highlight">GYM</span></span
+            >
+          </div>
+
+          <ul class="navbar-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="./pages/servicios.html">Servicios</a></li>
+            <li><a href="./pages/planes.html">Planes</a></li>
+            <li><a href="./pages/entrenadores.html">Entrenadores</a></li>
+            <li><a href="./pages/contacto.html">Contacto</a></li>
+
+            <!-- Botón login (visible si NO está logueado) -->
+            <li id="login-btn-nav">
+              <a href="./pages/login.html" class="btn-nav">Ingresar</a>
+            </li>
+
+            <!-- Menú usuario (visible si está logueado) -->
+            <li id="user-menu" class="user-menu" style="display: none">
+              <button class="user-btn" id="user-btn">
+                <span class="user-avatar" id="user-avatar">U</span>
+                <span class="user-name" id="user-name">Usuario</span>
+                <span class="dropdown-arrow">▼</span>
+              </button>
+
+              <!-- Dropdown del usuario -->
+              <div class="user-dropdown" id="user-dropdown">
+                <div class="dropdown-divider"></div>
+                <button id="logout-btn">Cerrar sesión</button>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
     <header class="hero" id="inicio">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Bienvenido a tu nuevo estilo de vida</span>
-                <h1>Transformá tu cuerpo,<br><span class="text-gradient">transformá tu vida</span></h1>
-                <p>Entrená con equipos de última generación, entrenadores profesionales y una comunidad que te apoya en
-                    cada paso.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="window.location.href='./pages/planes.html'">
-                        Comenzar Ahora
-                    </button>
-                    <button class="btn btn-secondary" onclick="window.location.href='./pages/contacto.html'">
-                        Conocer Más
-                    </button>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Miembros Activos</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Clases Semanales</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10</span>
-                        <span class="stat-label">Años de Experiencia</span>
-                    </div>
-                </div>
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Bienvenido a tu nuevo estilo de vida</span>
+          <h1>
+            Transformá tu cuerpo,<br /><span class="text-gradient"
+              >transformá tu vida</span
+            >
+          </h1>
+          <p>
+            Entrená con equipos de última generación, entrenadores profesionales
+            y una comunidad que te apoya en cada paso.
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn btn-primary"
+              onclick="window.location.href='./pages/planes.html'"
+            >
+              Comenzar Ahora
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="window.location.href='./pages/contacto.html'"
+            >
+              Conocer Más
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Miembros Activos</span>
             </div>
+            <div class="stat-item">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Clases Semanales</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10</span>
+              <span class="stat-label">Años de Experiencia</span>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- ===== SERVICIOS ===== -->
     <section id="servicios" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Lo que ofrecemos</span>
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <p class="section-description">Todo lo que necesitás para alcanzar tus objetivos fitness</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏋️</div>
-                    <h3>Musculación</h3>
-                    <p>Sala equipada con máquinas de última generación y pesas libres. Entrenadores certificados
-                        disponibles.</p>
-                    <a href="./pages/servicios.html" class="service-link">Ver más →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Crossfit</h3>
-                    <p>Entrenamientos funcionales de alta intensidad. Desafiá tus límites en cada sesión.</p>
-                    <a href="./pages/servicios.html" class="service-link">Ver más →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧘</div>
-                    <h3>Clases Grupales</h3>
-                    <p>Spinning, Yoga, Zumba, Funcional y más. Entrená con energía grupal.</p>
-                    <a href="./pages/servicios.html" class="service-link">Ver más →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Personal Trainer</h3>
-                    <p>Programas personalizados adaptados a tus objetivos y necesidades específicas.</p>
-                    <a href="./pages/servicios.html" class="service-link">Ver más →</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Lo que ofrecemos</span>
+          <h2 class="section-title">Nuestros Servicios</h2>
+          <p class="section-description">
+            Todo lo que necesitás para alcanzar tus objetivos fitness
+          </p>
         </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏋️</div>
+            <h3>Musculación</h3>
+            <p>
+              Sala equipada con máquinas de última generación y pesas libres.
+              Entrenadores certificados disponibles.
+            </p>
+            <a href="./pages/servicios.html" class="service-link">Ver más →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Crossfit</h3>
+            <p>
+              Entrenamientos funcionales de alta intensidad. Desafiá tus límites
+              en cada sesión.
+            </p>
+            <a href="./pages/servicios.html" class="service-link">Ver más →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🧘</div>
+            <h3>Clases Grupales</h3>
+            <p>
+              Spinning, Yoga, Zumba, Funcional y más. Entrená con energía
+              grupal.
+            </p>
+            <a href="./pages/servicios.html" class="service-link">Ver más →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Personal Trainer</h3>
+            <p>
+              Programas personalizados adaptados a tus objetivos y necesidades
+              específicas.
+            </p>
+            <a href="./pages/servicios.html" class="service-link">Ver más →</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== POR QUÉ ELEGIRNOS ===== -->
     <section class="why-section">
-        <div class="container">
-            <div class="why-content">
-                <div class="why-text">
-                    <span class="section-badge">Nuestra diferencia</span>
-                    <h2>¿Por qué elegir FitGym?</h2>
-                    <p class="lead-text">No somos solo un gimnasio, somos una comunidad comprometida con tu bienestar.
-                    </p>
-                    <ul class="features-list">
-                        <li>
-                            <span class="feature-icon">✓</span>
-                            <div>
-                                <strong>Equipamiento Premium</strong>
-                                <p>Máquinas de última generación constantemente actualizadas</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="feature-icon">✓</span>
-                            <div>
-                                <strong>Entrenadores Certificados</strong>
-                                <p>Profesionales con años de experiencia y formación continua</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="feature-icon">✓</span>
-                            <div>
-                                <strong>Horarios Flexibles</strong>
-                                <p>Abierto de 7:00 a 22:00 hs, adaptándonos a tu rutina</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="feature-icon">✓</span>
-                            <div>
-                                <strong>Ambiente Motivador</strong>
-                                <p>Comunidad activa que te impulsa a dar lo mejor cada día</p>
-                            </div>
-                        </li>
-                    </ul>
+      <div class="container">
+        <div class="why-content">
+          <div class="why-text">
+            <span class="section-badge">Nuestra diferencia</span>
+            <h2>¿Por qué elegir FitGym?</h2>
+            <p class="lead-text">
+              No somos solo un gimnasio, somos una comunidad comprometida con tu
+              bienestar.
+            </p>
+            <ul class="features-list">
+              <li>
+                <span class="feature-icon">✓</span>
+                <div>
+                  <strong>Equipamiento Premium</strong>
+                  <p>
+                    Máquinas de última generación constantemente actualizadas
+                  </p>
                 </div>
-                <div class="why-image">
-                    <div class="image-placeholder">
-                        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
-                            alt="Entrenamiento en FitGym">
-                    </div>
+              </li>
+              <li>
+                <span class="feature-icon">✓</span>
+                <div>
+                  <strong>Entrenadores Certificados</strong>
+                  <p>
+                    Profesionales con años de experiencia y formación continua
+                  </p>
                 </div>
+              </li>
+              <li>
+                <span class="feature-icon">✓</span>
+                <div>
+                  <strong>Horarios Flexibles</strong>
+                  <p>Abierto de 7:00 a 22:00 hs, adaptándonos a tu rutina</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-icon">✓</span>
+                <div>
+                  <strong>Ambiente Motivador</strong>
+                  <p>Comunidad activa que te impulsa a dar lo mejor cada día</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="why-image">
+            <div class="image-placeholder">
+              <img
+                src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
+                alt="Entrenamiento en FitGym"
+              />
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== PLANES DESTACADOS ===== -->
     <section id="planes" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Inversión en vos mismo</span>
-                <h2 class="section-title">Elegí tu Plan</h2>
-                <p class="section-description">Planes flexibles diseñados para cada objetivo</p>
-            </div>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <h3>Básico</h3>
-                    <div class="plan-price">
-                        <span class="price-amount">$45.000</span>
-                        <span class="price-period">/mes</span>
-                    </div>
-                    <p class="plan-desc">Ideal para comenzar tu transformación</p>
-                    <ul class="plan-features">
-                        <li>✓ Sala de musculación</li>
-                        <li>✓ Vestuarios y duchas</li>
-                        <li>✓ Horarios flexibles</li>
-                        <li>✓ Asesoramiento inicial</li>
-                    </ul>
-                    <button class="btn btn-outline" onclick="window.location.href='./pages/planes.html'">Elegir
-                        Plan</button>
-                </div>
-                <div class="plan-card featured">
-                    <div class="plan-badge">Más Popular</div>
-                    <h3>Full</h3>
-                    <div class="plan-price">
-                        <span class="price-amount">$65.000</span>
-                        <span class="price-period">/mes</span>
-                    </div>
-                    <p class="plan-desc">La opción más completa y elegida</p>
-                    <ul class="plan-features">
-                        <li>✓ Todo del plan Básico</li>
-                        <li>✓ Clases grupales ilimitadas</li>
-                        <li>✓ Plan nutricional</li>
-                        <li>✓ Evaluación física mensual</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="window.location.href='./pages/planes.html'">Elegir
-                        Plan</button>
-                </div>
-                <div class="plan-card">
-                    <h3>Premium</h3>
-                    <div class="plan-price">
-                        <span class="price-amount">$80.000</span>
-                        <span class="price-period">/mes</span>
-                    </div>
-                    <p class="plan-desc">Experiencia personalizada premium</p>
-                    <ul class="plan-features">
-                        <li>✓ Todo del plan Full</li>
-                        <li>✓ Personal trainer dedicado</li>
-                        <li>✓ Seguimiento personalizado</li>
-                        <li>✓ Prioridad en reservas</li>
-                    </ul>
-                    <button class="btn btn-outline" onclick="window.location.href='./pages/planes.html'">Elegir
-                        Plan</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Inversión en vos mismo</span>
+          <h2 class="section-title">Elegí tu Plan</h2>
+          <p class="section-description">
+            Planes flexibles diseñados para cada objetivo
+          </p>
         </div>
+        <div class="plans-grid">
+          <div class="plan-card">
+            <h3>Básico</h3>
+            <div class="plan-price">
+              <span class="price-amount">$45.000</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <p class="plan-desc">Ideal para comenzar tu transformación</p>
+            <ul class="plan-features">
+              <li>✓ Sala de musculación</li>
+              <li>✓ Vestuarios y duchas</li>
+              <li>✓ Horarios flexibles</li>
+              <li>✓ Asesoramiento inicial</li>
+            </ul>
+            <button
+              class="btn btn-outline"
+              onclick="window.location.href='./pages/planes.html'"
+            >
+              Elegir Plan
+            </button>
+          </div>
+          <div class="plan-card featured">
+            <div class="plan-badge">Más Popular</div>
+            <h3>Full</h3>
+            <div class="plan-price">
+              <span class="price-amount">$65.000</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <p class="plan-desc">La opción más completa y elegida</p>
+            <ul class="plan-features">
+              <li>✓ Todo del plan Básico</li>
+              <li>✓ Clases grupales ilimitadas</li>
+              <li>✓ Plan nutricional</li>
+              <li>✓ Evaluación física mensual</li>
+            </ul>
+            <button
+              class="btn btn-primary"
+              onclick="window.location.href='./pages/planes.html'"
+            >
+              Elegir Plan
+            </button>
+          </div>
+          <div class="plan-card">
+            <h3>Premium</h3>
+            <div class="plan-price">
+              <span class="price-amount">$80.000</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <p class="plan-desc">Experiencia personalizada premium</p>
+            <ul class="plan-features">
+              <li>✓ Todo del plan Full</li>
+              <li>✓ Personal trainer dedicado</li>
+              <li>✓ Seguimiento personalizado</li>
+              <li>✓ Prioridad en reservas</li>
+            </ul>
+            <button
+              class="btn btn-outline"
+              onclick="window.location.href='./pages/planes.html'"
+            >
+              Elegir Plan
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== TESTIMONIOS ===== -->
     <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Historias reales</span>
-                <h2 class="section-title">Lo que dicen nuestros miembros</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p>"Hace 3 meses que entreno acá y los cambios son increíbles. El ambiente es súper motivador y los
-                        profes siempre están para ayudarte. ¡Lo recomiendo 100%!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">GM</div>
-                        <div>
-                            <strong>Gonzalo Martínez</strong>
-                            <span>Plan Full</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p>"La mejor inversión que hice este año. Equipamiento de primer nivel, clases variadas y un equipo
-                        de entrenadores que realmente se preocupa por tus resultados."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">FP</div>
-                        <div>
-                            <strong>Florencia Pérez</strong>
-                            <span>Plan Premium</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p>"Excelente gimnasio. Las instalaciones están siempre limpias, hay buena onda entre todos y la
-                        variedad de clases te mantiene siempre motivado. ¡No lo cambio por nada!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div>
-                            <strong>Martín Rodríguez</strong>
-                            <span>Plan Full</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Historias reales</span>
+          <h2 class="section-title">Lo que dicen nuestros miembros</h2>
         </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p>
+              "Hace 3 meses que entreno acá y los cambios son increíbles. El
+              ambiente es súper motivador y los profes siempre están para
+              ayudarte. ¡Lo recomiendo 100%!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">GM</div>
+              <div>
+                <strong>Gonzalo Martínez</strong>
+                <span>Plan Full</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p>
+              "La mejor inversión que hice este año. Equipamiento de primer
+              nivel, clases variadas y un equipo de entrenadores que realmente
+              se preocupa por tus resultados."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">FP</div>
+              <div>
+                <strong>Florencia Pérez</strong>
+                <span>Plan Premium</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p>
+              "Excelente gimnasio. Las instalaciones están siempre limpias, hay
+              buena onda entre todos y la variedad de clases te mantiene siempre
+              motivado. ¡No lo cambio por nada!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div>
+                <strong>Martín Rodríguez</strong>
+                <span>Plan Full</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CTA FINAL ===== -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>¿Listo para tu transformación?</h2>
-                <p>Unite a nuestra comunidad hoy y empezá a ver resultados desde la primera semana</p>
-                <button class="btn btn-primary btn-large" onclick="window.location.href='./pages/contacto.html'">
-                    Comenzar Mi Prueba Gratis
-                </button>
-                <p class="cta-note">* Primera clase sin cargo · Sin permanencia mínima</p>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para tu transformación?</h2>
+          <p>
+            Unite a nuestra comunidad hoy y empezá a ver resultados desde la
+            primera semana
+          </p>
+          <button
+            class="btn btn-primary btn-large"
+            onclick="window.location.href='./pages/contacto.html'"
+          >
+            Comenzar Mi Prueba Gratis
+          </button>
+          <p class="cta-note">
+            * Primera clase sin cargo · Sin permanencia mínima
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <span class="logo-icon">💪</span>
-                        <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
-                    </div>
-                    <p>Transformá tu cuerpo, transformá tu vida. Tu mejor versión te espera.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="TikTok">🎵</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="./pages/servicios.html">Servicios</a></li>
-                        <li><a href="./pages/planes.html">Planes</a></li>
-                        <li><a href="./pages/contacto.html">Contacto</a></li>
-                        <li><a href="./pages/login.html">Ingresar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Horarios</h4>
-                    <ul>
-                        <li>Lun - Vie: 7:00 - 22:00</li>
-                        <li>Sábados: 8:00 - 20:00</li>
-                        <li>Domingos: Cerrado</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li>📍 Av. Siempre Fuerte 1234</li>
-                        <li>📞 (011) 1234-5678</li>
-                        <li>✉️ info@fitgym.com</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <span class="logo-icon">💪</span>
+              <span class="logo-text"
+                >FIT<span class="logo-highlight">GYM</span></span
+              >
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+            <p>
+              Transformá tu cuerpo, transformá tu vida. Tu mejor versión te
+              espera.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="TikTok">🎵</a>
             </div>
+          </div>
+          <div class="footer-col">
+            <h4>Enlaces</h4>
+            <ul>
+              <li><a href="./pages/servicios.html">Servicios</a></li>
+              <li><a href="./pages/planes.html">Planes</a></li>
+              <li><a href="./pages/contacto.html">Contacto</a></li>
+              <li><a href="./pages/login.html">Ingresar</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Horarios</h4>
+            <ul>
+              <li>Lun - Vie: 7:00 - 22:00</li>
+              <li>Sábados: 8:00 - 20:00</li>
+              <li>Domingos: Cerrado</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li>📍 Av. Siempre Fuerte 1234</li>
+              <li>📞 (011) 1234-5678</li>
+              <li>✉️ info@fitgym.com</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
-
-</body>
-
+    <script src="./auth.js"></script>
+  </body>
 </html>
