@@ -1,348 +1,447 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios - FitGym</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
-                    <span class="logo-icon">💪</span>
-                    <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
-                </div>
-                <ul class="navbar-links">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="./servicios.html" class="active">Servicios</a></li>
-                    <li><a href="./planes.html">Planes</a></li>
-                    <li><a href="./entrenadores.html">Entrenadores</a></li>
-                    <li><a href="./contacto.html">Contacto</a></li>
-                    <li><a href="./login.html" class="btn-nav">Ingresar</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <body>
+   <!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <div class="navbar-logo" onclick="window.location.href='../index.html'">
+        <span class="logo-icon">💪</span>
+        <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+      </div>
+
+      <ul class="navbar-links">
+        <li><a href="../index.html#inicio">Inicio</a></li>
+        <li><a href="./servicios.html" class="active">Servicios</a></li>
+        <li><a href="./planes.html">Planes</a></li>
+        <li><a href="./entrenadores.html">Entrenadores</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+
+        <!-- Botón login (visible si NO está logueado) -->
+        <li id="login-btn-nav">
+          <a href="./login.html" class="btn-nav">Ingresar</a>
+        </li>
+
+        <!-- Menú usuario (visible si está logueado) -->
+        <li id="user-menu" class="user-menu" style="display: none">
+          <button class="user-btn" id="user-btn">
+            <span class="user-avatar" id="user-avatar">U</span>
+            <span class="user-name" id="user-name">Usuario</span>
+            <span class="dropdown-arrow">▼</span>
+          </button>
+
+          <!-- Dropdown del usuario -->
+          <div class="user-dropdown" id="user-dropdown">
+            <div class="dropdown-divider"></div>
+            <button id="logout-btn">Cerrar sesión</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <!-- ===== HERO SERVICIOS ===== -->
     <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="hero-badge">Todo lo que necesitás para entrenar</span>
-                <h1>Nuestros Servicios</h1>
-                <p>Instalaciones de primera calidad y una amplia variedad de opciones para todos los niveles</p>
-            </div>
+      <div class="container">
+        <div class="page-hero-content">
+          <span class="hero-badge">Todo lo que necesitás para entrenar</span>
+          <h1>Nuestros Servicios</h1>
+          <p>
+            Instalaciones de primera calidad y una amplia variedad de opciones
+            para todos los niveles
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- ===== SERVICIOS PRINCIPALES ===== -->
     <section class="section">
-        <div class="container">
-            <div class="services-main-grid">
-                <div class="service-main-card">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg" alt="Musculación">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">🏋️</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Musculación</h3>
-                        <p class="service-description">Sala equipada con máquinas de última generación para trabajar todos los grupos musculares.</p>
-                        <ul class="service-list">
-                            <li>✓ Más de 50 máquinas profesionales</li>
-                            <li>✓ Zona de pesas libres completa</li>
-                            <li>✓ Racks de sentadillas y press banca</li>
-                            <li>✓ Entrenadores disponibles para asesoramiento</li>
-                            <li>✓ Rutinas personalizadas gratuitas</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./contacto.html'">
-                            Más información
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-main-card reverse">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg" alt="Crossfit">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">⚡</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Crossfit</h3>
-                        <p class="service-description">Entrenamientos de alta intensidad que combinan fuerza, cardio y funcionalidad.</p>
-                        <ul class="service-list">
-                            <li>✓ Box de crossfit equipado</li>
-                            <li>✓ WODs diarios programados</li>
-                            <li>✓ Clases para todos los niveles</li>
-                            <li>✓ Coaches certificados CF-L1/L2</li>
-                            <li>✓ Competencias mensuales internas</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./contacto.html'">
-                            Más información
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-main-card">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg" alt="Clases Grupales">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">👥</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Clases Grupales</h3>
-                        <p class="service-description">Variedad de disciplinas para entrenar en grupo con energía y motivación.</p>
-                        <ul class="service-list">
-                            <li>✓ Spinning / Ciclismo indoor</li>
-                            <li>✓ Zumba y baile fitness</li>
-                            <li>✓ Entrenamiento funcional</li>
-                            <li>✓ GAP (Glúteos, Abdomen, Piernas)</li>
-                            <li>✓ +15 clases semanales</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./contacto.html'">
-                            Ver horarios
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-main-card reverse">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg" alt="Yoga">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">🧘</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Yoga & Pilates</h3>
-                        <p class="service-description">Clases de bajo impacto para mejorar flexibilidad, postura y bienestar mental.</p>
-                        <ul class="service-list">
-                            <li>✓ Hatha y Vinyasa Yoga</li>
-                            <li>✓ Pilates Mat y con implementos</li>
-                            <li>✓ Clases de meditación guiada</li>
-                            <li>✓ Instructores certificados RYT</li>
-                            <li>✓ Ambiente tranquilo y relajado</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./contacto.html'">
-                            Más información
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-main-card">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/6455925/pexels-photo-6455925.jpeg" alt="Personal Training">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">🎯</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Personal Training</h3>
-                        <p class="service-description">Entrenamiento personalizado uno a uno para alcanzar tus objetivos específicos.</p>
-                        <ul class="service-list">
-                            <li>✓ Evaluación física inicial completa</li>
-                            <li>✓ Plan de entrenamiento personalizado</li>
-                            <li>✓ Seguimiento semanal de progreso</li>
-                            <li>✓ Ajustes según tus necesidades</li>
-                            <li>✓ Entrenadores con +5 años de experiencia</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./entrenadores.html'">
-                            Ver entrenadores
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-main-card reverse">
-                    <div class="service-main-image">
-                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Nutrición">
-                        <div class="service-overlay">
-                            <span class="service-icon-large">🥗</span>
-                        </div>
-                    </div>
-                    <div class="service-main-content">
-                        <h3>Asesoramiento Nutricional</h3>
-                        <p class="service-description">Planes alimenticios diseñados por nutricionistas para complementar tu entrenamiento.</p>
-                        <ul class="service-list">
-                            <li>✓ Evaluación nutricional completa</li>
-                            <li>✓ Plan alimenticio personalizado</li>
-                            <li>✓ Seguimiento mensual</li>
-                            <li>✓ Recetas y tips saludables</li>
-                            <li>✓ Nutricionistas deportivos matriculados</li>
-                        </ul>
-                        <button class="btn btn-outline" onclick="window.location.href='./contacto.html'">
-                            Consultar
-                        </button>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="services-main-grid">
+          <div class="service-main-card">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg"
+                alt="Musculación"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">🏋️</span>
+              </div>
             </div>
+            <div class="service-main-content">
+              <h3>Musculación</h3>
+              <p class="service-description">
+                Sala equipada con máquinas de última generación para trabajar
+                todos los grupos musculares.
+              </p>
+              <ul class="service-list">
+                <li>✓ Más de 50 máquinas profesionales</li>
+                <li>✓ Zona de pesas libres completa</li>
+                <li>✓ Racks de sentadillas y press banca</li>
+                <li>✓ Entrenadores disponibles para asesoramiento</li>
+                <li>✓ Rutinas personalizadas gratuitas</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./contacto.html'"
+              >
+                Más información
+              </button>
+            </div>
+          </div>
+
+          <div class="service-main-card reverse">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg"
+                alt="Crossfit"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">⚡</span>
+              </div>
+            </div>
+            <div class="service-main-content">
+              <h3>Crossfit</h3>
+              <p class="service-description">
+                Entrenamientos de alta intensidad que combinan fuerza, cardio y
+                funcionalidad.
+              </p>
+              <ul class="service-list">
+                <li>✓ Box de crossfit equipado</li>
+                <li>✓ WODs diarios programados</li>
+                <li>✓ Clases para todos los niveles</li>
+                <li>✓ Coaches certificados CF-L1/L2</li>
+                <li>✓ Competencias mensuales internas</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./contacto.html'"
+              >
+                Más información
+              </button>
+            </div>
+          </div>
+
+          <div class="service-main-card">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg"
+                alt="Clases Grupales"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">👥</span>
+              </div>
+            </div>
+            <div class="service-main-content">
+              <h3>Clases Grupales</h3>
+              <p class="service-description">
+                Variedad de disciplinas para entrenar en grupo con energía y
+                motivación.
+              </p>
+              <ul class="service-list">
+                <li>✓ Spinning / Ciclismo indoor</li>
+                <li>✓ Zumba y baile fitness</li>
+                <li>✓ Entrenamiento funcional</li>
+                <li>✓ GAP (Glúteos, Abdomen, Piernas)</li>
+                <li>✓ +15 clases semanales</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./contacto.html'"
+              >
+                Ver horarios
+              </button>
+            </div>
+          </div>
+
+          <div class="service-main-card reverse">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg"
+                alt="Yoga"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">🧘</span>
+              </div>
+            </div>
+            <div class="service-main-content">
+              <h3>Yoga & Pilates</h3>
+              <p class="service-description">
+                Clases de bajo impacto para mejorar flexibilidad, postura y
+                bienestar mental.
+              </p>
+              <ul class="service-list">
+                <li>✓ Hatha y Vinyasa Yoga</li>
+                <li>✓ Pilates Mat y con implementos</li>
+                <li>✓ Clases de meditación guiada</li>
+                <li>✓ Instructores certificados RYT</li>
+                <li>✓ Ambiente tranquilo y relajado</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./contacto.html'"
+              >
+                Más información
+              </button>
+            </div>
+          </div>
+
+          <div class="service-main-card">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/6455925/pexels-photo-6455925.jpeg"
+                alt="Personal Training"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">🎯</span>
+              </div>
+            </div>
+            <div class="service-main-content">
+              <h3>Personal Training</h3>
+              <p class="service-description">
+                Entrenamiento personalizado uno a uno para alcanzar tus
+                objetivos específicos.
+              </p>
+              <ul class="service-list">
+                <li>✓ Evaluación física inicial completa</li>
+                <li>✓ Plan de entrenamiento personalizado</li>
+                <li>✓ Seguimiento semanal de progreso</li>
+                <li>✓ Ajustes según tus necesidades</li>
+                <li>✓ Entrenadores con +5 años de experiencia</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./entrenadores.html'"
+              >
+                Ver entrenadores
+              </button>
+            </div>
+          </div>
+
+          <div class="service-main-card reverse">
+            <div class="service-main-image">
+              <img
+                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+                alt="Nutrición"
+              />
+              <div class="service-overlay">
+                <span class="service-icon-large">🥗</span>
+              </div>
+            </div>
+            <div class="service-main-content">
+              <h3>Asesoramiento Nutricional</h3>
+              <p class="service-description">
+                Planes alimenticios diseñados por nutricionistas para
+                complementar tu entrenamiento.
+              </p>
+              <ul class="service-list">
+                <li>✓ Evaluación nutricional completa</li>
+                <li>✓ Plan alimenticio personalizado</li>
+                <li>✓ Seguimiento mensual</li>
+                <li>✓ Recetas y tips saludables</li>
+                <li>✓ Nutricionistas deportivos matriculados</li>
+              </ul>
+              <button
+                class="btn btn-outline"
+                onclick="window.location.href='./contacto.html'"
+              >
+                Consultar
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== INSTALACIONES ===== -->
     <section class="section facilities-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Nuestras instalaciones</span>
-                <h2 class="section-title">Comodidad y Tecnología</h2>
-                <p class="section-description">Todo lo que necesitás para una experiencia completa</p>
-            </div>
-            <div class="facilities-grid">
-                <div class="facility-card">
-                    <div class="facility-icon">🚿</div>
-                    <h3>Vestuarios</h3>
-                    <p>Vestuarios amplios con duchas calientes, casilleros y espacio de guardado</p>
-                </div>
-                <div class="facility-card">
-                    <div class="facility-icon">❄️</div>
-                    <h3>Climatización</h3>
-                    <p>Aire acondicionado y ventilación en todas las áreas de entrenamiento</p>
-                </div>
-                <div class="facility-card">
-                    <div class="facility-icon">📱</div>
-                    <h3>WiFi Gratis</h3>
-                    <p>Conexión de alta velocidad disponible en todo el gimnasio</p>
-                </div>
-                <div class="facility-card">
-                    <div class="facility-icon">🔒</div>
-                    <h3>Seguridad 24/7</h3>
-                    <p>Cámaras de seguridad y personal de vigilancia permanente</p>
-                </div>
-                <div class="facility-card">
-                    <div class="facility-icon">🅿️</div>
-                    <h3>Estacionamiento</h3>
-                    <p>Amplio espacio de estacionamiento gratuito para miembros</p>
-                </div>
-                <div class="facility-card">
-                    <div class="facility-icon">☕</div>
-                    <h3>Zona de Café</h3>
-                    <p>Área de descanso con bebidas saludables y snacks proteicos</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Nuestras instalaciones</span>
+          <h2 class="section-title">Comodidad y Tecnología</h2>
+          <p class="section-description">
+            Todo lo que necesitás para una experiencia completa
+          </p>
         </div>
+        <div class="facilities-grid">
+          <div class="facility-card">
+            <div class="facility-icon">🚿</div>
+            <h3>Vestuarios</h3>
+            <p>
+              Vestuarios amplios con duchas calientes, casilleros y espacio de
+              guardado
+            </p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">❄️</div>
+            <h3>Climatización</h3>
+            <p>
+              Aire acondicionado y ventilación en todas las áreas de
+              entrenamiento
+            </p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">📱</div>
+            <h3>WiFi Gratis</h3>
+            <p>Conexión de alta velocidad disponible en todo el gimnasio</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">🔒</div>
+            <h3>Seguridad 24/7</h3>
+            <p>Cámaras de seguridad y personal de vigilancia permanente</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">🅿️</div>
+            <h3>Estacionamiento</h3>
+            <p>Amplio espacio de estacionamiento gratuito para miembros</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">☕</div>
+            <h3>Zona de Café</h3>
+            <p>Área de descanso con bebidas saludables y snacks proteicos</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== HORARIOS ===== -->
     <section class="section schedule-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Planificá tu semana</span>
-                <h2 class="section-title">Horarios de Clases</h2>
-                <p class="section-description">Consulta disponible en recepción</p>
-            </div>
-            <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h3>Lunes a Viernes</h3>
-                    <div class="schedule-time">
-                        <span class="time-slot">7:00 - 9:00</span>
-                        <span class="class-name">Spinning · Funcional</span>
-                    </div>
-                    <div class="schedule-time">
-                        <span class="time-slot">10:00 - 12:00</span>
-                        <span class="class-name">Yoga · Pilates</span>
-                    </div>
-                    <div class="schedule-time">
-                        <span class="time-slot">18:00 - 20:00</span>
-                        <span class="class-name">Crossfit · Zumba</span>
-                    </div>
-                    <div class="schedule-time">
-                        <span class="time-slot">20:00 - 21:00</span>
-                        <span class="class-name">GAP · Funcional</span>
-                    </div>
-                </div>
-                <div class="schedule-card">
-                    <h3>Sábados</h3>
-                    <div class="schedule-time">
-                        <span class="time-slot">9:00 - 10:00</span>
-                        <span class="class-name">Yoga</span>
-                    </div>
-                    <div class="schedule-time">
-                        <span class="time-slot">10:00 - 11:00</span>
-                        <span class="class-name">Spinning</span>
-                    </div>
-                    <div class="schedule-time">
-                        <span class="time-slot">11:00 - 12:00</span>
-                        <span class="class-name">Funcional</span>
-                    </div>
-                </div>
-                <div class="schedule-card special">
-                    <h3>Domingos</h3>
-                    <p class="closed-notice">Cerrado · Descansá y recuperate</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Planificá tu semana</span>
+          <h2 class="section-title">Horarios de Clases</h2>
+          <p class="section-description">Consulta disponible en recepción</p>
         </div>
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <h3>Lunes a Viernes</h3>
+            <div class="schedule-time">
+              <span class="time-slot">7:00 - 9:00</span>
+              <span class="class-name">Spinning · Funcional</span>
+            </div>
+            <div class="schedule-time">
+              <span class="time-slot">10:00 - 12:00</span>
+              <span class="class-name">Yoga · Pilates</span>
+            </div>
+            <div class="schedule-time">
+              <span class="time-slot">18:00 - 20:00</span>
+              <span class="class-name">Crossfit · Zumba</span>
+            </div>
+            <div class="schedule-time">
+              <span class="time-slot">20:00 - 21:00</span>
+              <span class="class-name">GAP · Funcional</span>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <h3>Sábados</h3>
+            <div class="schedule-time">
+              <span class="time-slot">9:00 - 10:00</span>
+              <span class="class-name">Yoga</span>
+            </div>
+            <div class="schedule-time">
+              <span class="time-slot">10:00 - 11:00</span>
+              <span class="class-name">Spinning</span>
+            </div>
+            <div class="schedule-time">
+              <span class="time-slot">11:00 - 12:00</span>
+              <span class="class-name">Funcional</span>
+            </div>
+          </div>
+          <div class="schedule-card special">
+            <h3>Domingos</h3>
+            <p class="closed-notice">Cerrado · Descansá y recuperate</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CTA ===== -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>¿Querés probar nuestros servicios?</h2>
-                <p>Reservá tu clase de prueba gratuita y descubrí por qué somos diferentes</p>
-                <button class="btn btn-primary btn-large" onclick="window.location.href='./contacto.html'">
-                    Reservar Clase Gratis
-                </button>
-                <p class="cta-note">* Sin compromiso · Asesoramiento incluido</p>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Querés probar nuestros servicios?</h2>
+          <p>
+            Reservá tu clase de prueba gratuita y descubrí por qué somos
+            diferentes
+          </p>
+          <button
+            class="btn btn-primary btn-large"
+            onclick="window.location.href='./contacto.html'"
+          >
+            Reservar Clase Gratis
+          </button>
+          <p class="cta-note">* Sin compromiso · Asesoramiento incluido</p>
         </div>
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <span class="logo-icon">💪</span>
-                        <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
-                    </div>
-                    <p>Transformá tu cuerpo, transformá tu vida. Tu mejor versión te espera.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="TikTok">🎵</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="./servicios.html">Servicios</a></li>
-                        <li><a href="./planes.html">Planes</a></li>
-                        <li><a href="./entrenadores.html">Entrenadores</a></li>
-                        <li><a href="./contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Horarios</h4>
-                    <ul>
-                        <li>Lun - Vie: 7:00 - 22:00</li>
-                        <li>Sábados: 8:00 - 20:00</li>
-                        <li>Domingos: Cerrado</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li>📍 Av. Siempre Fuerte 1234</li>
-                        <li>📞 (011) 1234-5678</li>
-                        <li>✉️ info@fitgym.com</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <span class="logo-icon">💪</span>
+              <span class="logo-text"
+                >FIT<span class="logo-highlight">GYM</span></span
+              >
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+            <p>
+              Transformá tu cuerpo, transformá tu vida. Tu mejor versión te
+              espera.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="TikTok">🎵</a>
             </div>
+          </div>
+          <div class="footer-col">
+            <h4>Enlaces</h4>
+            <ul>
+              <li><a href="./servicios.html">Servicios</a></li>
+              <li><a href="./planes.html">Planes</a></li>
+              <li><a href="./entrenadores.html">Entrenadores</a></li>
+              <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Horarios</h4>
+            <ul>
+              <li>Lun - Vie: 7:00 - 22:00</li>
+              <li>Sábados: 8:00 - 20:00</li>
+              <li>Domingos: Cerrado</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li>📍 Av. Siempre Fuerte 1234</li>
+              <li>📞 (011) 1234-5678</li>
+              <li>✉️ info@fitgym.com</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitGym. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
-</body>
-
+        <script src="../auth.js"></script>
+  </body>
 </html>

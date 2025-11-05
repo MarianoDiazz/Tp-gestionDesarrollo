@@ -8,30 +8,50 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
-                    <span class="logo-icon">💪</span>
-                    <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
-                </div>
-                <ul class="navbar-links">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="./servicios.html">Servicios</a></li>
-                    <li><a href="./planes.html">Planes</a></li>
-                    <li><a href="./entrenadores.html">Entrenadores</a></li>
-                    <li><a href="./contacto.html" class="active">Contacto</a></li>
-                    <li><a href="./login.html" class="btn-nav">Ingresar</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+   <!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <div class="navbar-logo" onclick="window.location.href='../index.html'">
+        <span class="logo-icon">💪</span>
+        <span class="logo-text">FIT<span class="logo-highlight">GYM</span></span>
+      </div>
+
+      <ul class="navbar-links">
+        <li><a href="../index.html#inicio">Inicio</a></li>
+        <li><a href="./servicios.html">Servicios</a></li>
+        <li><a href="./planes.html">Planes</a></li>
+        <li><a href="./entrenadores.html">Entrenadores</a></li>
+        <li><a href="./contacto.html" class="active">Contacto</a></li>
+
+        <!-- Botón login (visible si NO está logueado) -->
+        <li id="login-btn-nav">
+          <a href="./login.html" class="btn-nav">Ingresar</a>
+        </li>
+
+        <!-- Menú usuario (visible si está logueado) -->
+        <li id="user-menu" class="user-menu" style="display: none">
+          <button class="user-btn" id="user-btn">
+            <span class="user-avatar" id="user-avatar">U</span>
+            <span class="user-name" id="user-name">Usuario</span>
+            <span class="dropdown-arrow">▼</span>
+          </button>
+
+          <!-- Dropdown del usuario -->
+          <div class="user-dropdown" id="user-dropdown">
+            <div class="dropdown-divider"></div>
+            <button id="logout-btn">Cerrar sesión</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <!-- ===== HERO CONTACTO ===== -->
     <section class="page-hero">
@@ -52,7 +72,7 @@
                 <div class="contact-info">
                     <h2>Información de Contacto</h2>
                     <p class="contact-intro">También podés comunicarte con nosotros por estos medios</p>
-
+                    
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
                         <div>
@@ -82,8 +102,8 @@
                         <div>
                             <h3>Horarios de Atención</h3>
                             <p>Lunes a Viernes: 7:00 - 22:00<br>
-                                Sábados: 8:00 - 20:00<br>
-                                Domingos: Cerrado</p>
+                            Sábados: 8:00 - 20:00<br>
+                            Domingos: Cerrado</p>
                         </div>
                     </div>
 
@@ -101,7 +121,7 @@
                 <div class="contact-form-container">
                     <h2>Envianos un Mensaje</h2>
                     <p class="form-intro">Completá el formulario y te responderemos en menos de 24 horas</p>
-
+                    
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Nombre completo *</label>
@@ -132,8 +152,7 @@
 
                         <div class="form-group">
                             <label for="message">Mensaje *</label>
-                            <textarea id="message" name="message" rows="6"
-                                placeholder="Contanos en qué podemos ayudarte..." required></textarea>
+                            <textarea id="message" name="message" rows="6" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-large">Enviar Mensaje</button>
@@ -150,9 +169,12 @@
             <h2 class="section-title">Visitanos</h2>
             <p class="section-description">Vení a conocer nuestras instalaciones</p>
             <div class="map-container-full">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168881437284!2d-58.38156908477049!3d-34.603722480459445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf8c8b7e0d%3A0x4e3d1c4c8e8f0e0!2sObelisco!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
-                    width="100%" height="450" style="border:0;border-radius:var(--radius-lg);" allowfullscreen=""
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168881437284!2d-58.38156908477049!3d-34.603722480459445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf8c8b7e0d%3A0x4e3d1c4c8e8f0e0!2sObelisco!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;border-radius:var(--radius-lg);" 
+                    allowfullscreen="" 
                     loading="lazy">
                 </iframe>
             </div>
@@ -209,12 +231,13 @@
 
     <script>
         // Manejo del formulario
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('¡Gracias por tu mensaje! Te responderemos pronto.');
             this.reset();
         });
     </script>
+    <script src="../auth.js"></script>
 </body>
 
 </html>

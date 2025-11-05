@@ -96,10 +96,24 @@
 }
 
 .login-info {
+  display: none; /* Oculto por defecto si no se usa */
+}
+
+/* Si querés usar el diseño de dos columnas, descomenta esto y la sección en HTML */
+/*
+.login-section .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.login-info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
+*/
 
 .info-card {
   background: var(--bg-card);
@@ -930,6 +944,153 @@ body {
 .btn-nav:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-primary);
+}
+
+/* ===== MENÚ DE USUARIO ===== */
+.user-menu {
+  position: relative;
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.user-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--bg-hover);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.9rem;
+}
+
+.user-name {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base);
+}
+
+.user-btn:hover .dropdown-arrow {
+  transform: translateY(2px);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  min-width: 260px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-base);
+  z-index: 1000;
+}
+
+.user-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  padding: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.user-avatar-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.dropdown-header strong {
+  display: block;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+}
+
+.user-status {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem var(--spacing-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background: var(--bg-hover);
+  color: var(--primary-color);
+}
+
+.dropdown-item:last-child {
+  color: #ff4444;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.dropdown-item:last-child:hover {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+}
+
+.dropdown-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
 }
 
 /* ===== HERO SECTION ===== */
@@ -2265,22 +2426,28 @@ body {
   margin-bottom: var(--spacing-md);
 }
 
+/* Ajuste visual si querés que el logout sea un botón destacado */
 #logout-btn {
+  display: block;
+  width: 85%;
+  margin: 0.8rem auto 1rem;
   background: var(--gradient-primary);
   border: none;
   color: white;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-full);
   cursor: pointer;
+  text-align: center;
   transition: var(--transition-base);
 }
 
 #logout-btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-primary);
 }
+
 
 /* Servicios página */
 .servicios-container {
